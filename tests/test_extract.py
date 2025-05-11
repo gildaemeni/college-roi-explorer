@@ -16,11 +16,15 @@ def test_get_cost_of_living_unknown_city():
     assert result["total_estimate"] == 0 
 
 # Test salary CSV extract function
-def test_extract_salary_data():
-    df = extract_salary_data("cache/raw/Most-Recent-Cohorts-Field-of-Study.csv")
-    assert not df.empty  # Should return some data
-    assert all(col in df.columns for col in ['school', 'major', 'degree', 'post_grad_earnings'])  # Correct columns
-    assert df['post_grad_earnings'].dtype == float  # Salary should be float
+def test_extract_salary_data_final():
+    df = extract_salary_data(
+        "cache/raw/Most-Recent-Cohorts-Field-of-Study.csv",
+        "cache/raw/Most-Recent-Cohorts-Institution.csv"
+    )
+    assert not df.empty
+    assert all(col in df.columns for col in ['school', 'state', 'major', 'degree', 'post_grad_earnings'])
+    assert df['post_grad_earnings'].dtype == float
+
 
 def test_entity_recognition_returns_list():
     text = "Barack Obama was born in Hawaii and served as the President of the United States."
