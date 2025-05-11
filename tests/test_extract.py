@@ -1,4 +1,5 @@
 from code.extract import get_cost_of_living, extract_salary_data
+from code.api_calls import call_entity_recognition
 
 # Test known city
 def test_get_cost_of_living():
@@ -20,3 +21,10 @@ def test_extract_salary_data():
     assert not df.empty  # Should return some data
     assert all(col in df.columns for col in ['school', 'major', 'degree', 'post_grad_earnings'])  # Correct columns
     assert df['post_grad_earnings'].dtype == float  # Salary should be float
+
+def test_entity_recognition_returns_list():
+    text = "Barack Obama was born in Hawaii and served as the President of the United States."
+    result = call_entity_recognition(text)
+    
+    assert isinstance(result, list)  # Should return a list
+    assert all("text" in entity for entity in result) or result == []  # Valid entity structure or empty

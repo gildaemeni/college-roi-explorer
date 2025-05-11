@@ -1,0 +1,4 @@
+kind,results
+EntityRecognitionResults,[]
+EntityRecognitionResults,"[{'id': '1', 'error': {'code': 'InvalidArgument', 'message': 'Invalid Document in request.', 'innererror': {'code': 'InvalidDocument', 'message': 'Document text is empty.'}}}]"
+EntityRecognitionResults,2025-02-01
