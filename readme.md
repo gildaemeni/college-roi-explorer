@@ -1,5 +1,7 @@
 # College ROI Explorer
 
+[Click here to try the live app]((https://gildaemeni-college-roi-explorer-codestreamlit-app-eef8ca.streamlit.app/))
+
 A fully interactive dashboard that helps users explore **post-graduation earnings** across 300+ U.S. universities for tech-related majors with **cost of living comparisons**, **state salary maps**, and a **modular ETL pipeline**. This project highlights the **return on investment (ROI)** for tech degrees based on location and field of study.
 
 ---
@@ -30,6 +32,7 @@ A fully interactive dashboard that helps users explore **post-graduation earning
 ---
 
 ## Project Structure
+<pre lang="markdown">
 college-roi-explorer/
 │
 ├── code/
@@ -46,6 +49,7 @@ college-roi-explorer/
 │ └── test_extract.py # Pytest validations
 ├── README.md
 ├── reflection.md
+`` </pre>
 
 ## How to Run the Project
 ```bash
